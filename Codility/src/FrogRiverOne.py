@@ -2,8 +2,7 @@ X = 6
 A = [1,2,3,5,6,6,7,5]
 c = 0
 
-if X not in A:
-    c = -1
+
 for index in range(0, len(A)):
     if A[index] == X:
         c = index
