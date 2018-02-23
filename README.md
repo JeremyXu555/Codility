@@ -63,3 +63,40 @@ def buble_sort(arr):
     return arr
 ```
 `range()` contains the starting point but not the ending point
+
+### Selection Sort:
+
+```
+
+def select_sort(arr):
+    for fillslot in range(len(arr)-1, 0, -1):
+        positionOfMax = 0
+        for location in range(1, fillslot+1):
+            if arr[location] > arr[positionOfMax]:
+                positionOfMax = location
+        
+        temp = arr[fillslot]
+        arr[fillslot] = arr[positionOfMax]
+        arr[positionOfMax] = temp
+    
+    return arr    
+
+def select_sort(arr):
+    
+    # For every slot in array
+    for fillslot in range(len(arr)):
+        positionOfMin=fillslot
+
+        # For every set of 0 to fillslot+1
+        for location in range(fillslot+1, len(arr)):
+
+            # Set minum's location
+            if arr[location]<arr[positionOfMin]:
+                positionOfMin = location
+
+        temp = arr[fillslot]
+        arr[fillslot] = arr[positionOfMin]
+        arr[positionOfMin] = temp
+    return arr
+
+```
