@@ -49,4 +49,17 @@ known_results = [0]*(target+1)
 coin_change(target, coins, known_results)
 ```
 
-  
+### Bubble Sort:
+
+```
+def buble_sort(arr):
+    
+    for n in range(len(arr)-1, 0, -1):
+        for i in range(n):
+            if arr[i] > arr[i+1]:
+                temp = arr[i]
+                arr[i] = arr[i+1]
+                arr[i+1] = temp
+    return arr
+```
+`range()` contains the starting point but not the ending point
