@@ -65,7 +65,7 @@ def buble_sort(arr):
 `range()` contains the starting point but not the ending point
 
 ### Selection Sort:
-
+Sorting from the right
 ```
 
 def select_sort(arr):
@@ -80,7 +80,10 @@ def select_sort(arr):
         arr[positionOfMax] = temp
     
     return arr    
+```
+Sorting from the left:
 
+```
 def select_sort(arr):
     
     # For every slot in array
