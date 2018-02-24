@@ -103,3 +103,27 @@ def select_sort(arr):
     return arr
 
 ```
+### Insert Sort
+
+```
+
+def insert_sort(arr):
+    
+    for i in range(1, len(arr)):
+        
+        # define the position and currentValue for comparasion
+        position = i
+        currentValue = arr[position]
+        
+        while position > 0 and arr[position-1] > currentValue:
+            # the position is keeping changing, but the currentValue will be always as the mark for comparing
+            # whenever the value before the position is bigger than currentValue, the current position value will be 
+            # set as the bigger value
+            arr[position] = arr[position-1]
+            position -= 1
+        
+        arr[position] = currentValue
+    
+    return arr
+
+```
