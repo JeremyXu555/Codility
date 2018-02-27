@@ -62,7 +62,7 @@ def continuous_sum(arr):
     i = 1
 
     while i < len(arr):
-        
+
         # if the current_sum is smaller than the current number in the array
         # that means the value has been accumulated so far is less than the current
         # number, so we need to start a new current_max round
@@ -73,3 +73,28 @@ def continuous_sum(arr):
        i += 1
 
     return max_sum
+
+### String Compression
+def str_compression(s):
+
+    count = 1
+    startChar = s[0]
+    output = ''
+
+    i = 1
+
+    while i < len(s):
+
+        if startChar == s[i] or i == len(s)-1:
+            count += 1
+        else:
+
+            output += startChar
+            output += str(count)
+            startChar = s[i]
+            count = 1
+            print(startChar)
+
+        i += 1
+
+    return output
