@@ -77,24 +77,24 @@ def continuous_sum(arr):
 ### String Compression
 def str_compression(s):
 
+    i = 1
     count = 1
-    startChar = s[0]
     output = ''
 
-    i = 1
+    ## Edge Check
+    if len(s) == 1:
+        output = s + str(1)
+
+    if len(s) == 0:
+        return ''
 
     while i < len(s):
 
-        if startChar == s[i] or i == len(s)-1:
+        if s[i-1] == s[i]:
             count += 1
         else:
-
-            output += startChar
+            output += s[i-1]
             output += str(count)
-            startChar = s[i]
             count = 1
-            print(startChar)
 
         i += 1
-
-    return output
