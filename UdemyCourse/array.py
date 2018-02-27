@@ -51,3 +51,25 @@ def rev_word(s):
         i += 1
 
     return list(reversed(output))
+
+### Max Continuous Sum
+
+def continuous_sum(arr):
+
+    current_sum = arr[0]
+    max_sum = current_sum
+
+    i = 1
+
+    while i < len(arr):
+        
+        # if the current_sum is smaller than the current number in the array
+        # that means the value has been accumulated so far is less than the current
+        # number, so we need to start a new current_max round
+       current_sum = max(current_sum+arr[i], arr[i])
+
+       max_sum = max(current_sum, max_sum)
+
+       i += 1
+
+    return max_sum
