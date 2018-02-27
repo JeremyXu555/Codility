@@ -98,3 +98,31 @@ def str_compression(s):
             count = 1
 
         i += 1
+
+### anagram Check
+def anagram(s1, s2):
+
+    s1 = s1.replace(' ', '')
+    s2 = s2.replace(' ', '')
+
+    if len(s1) != len(s2):
+        return False
+
+    counter = {}
+    ## make a dictionary for recording the occurences of the character
+
+    for c in s1:
+        if c in counter:
+            counter[c] += 1
+        else:
+            counter[c] = 1
+
+    for c in s2:
+        counter[c] -= 1
+                
+    for c in counter:
+        if counter[c] != 0:
+            return False
+
+
+    return True
