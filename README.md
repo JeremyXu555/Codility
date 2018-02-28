@@ -15,30 +15,31 @@ eventually the result comes out is a list.
 
 ```
 def coin_change(target, coins, known_result):
-    
+
     # set up the variable
     min_coin = target
-    
+
     # base case will return and end the function
-    if target in coins: 
+    if target in coins:
         known_result[target] = 1
         return 1
-    
-    # this is where the memorization come into play, avoid the repetive calculation which has been done before.
+
+    # this is where the memorization come into play, avoid the repetitive calculation which has been done before.
     elif known_result[target] > 1:
         return known_result[target]
-    
+
     else:
         for i in [c for c in coins if c <= target]:
+            // Let's imagine when the function has return 1 from the base case, if we don't have the plus one, // the coins_need will be always one, so the plus one will be use for accumulate the coins need so // far 
             coins_need = 1 + coin_change(target - i, coins, known_result)
-            
+
             if coins_need < min_coin:
                 min_coin = coins_need
-            
+
             # reset the known_result, every time the target get passed in has been changed
             known_result[target] = min_coin
-            
-    
+
+
     return min_coin
   ```
 Test: output should be 8  
@@ -53,7 +54,7 @@ coin_change(target, coins, known_results)
 
 ```
 def buble_sort(arr):
-    
+
     for n in range(len(arr)-1, 0, -1):
         for i in range(n):
             if arr[i] > arr[i+1]:
@@ -74,18 +75,18 @@ def select_sort(arr):
         for location in range(1, fillslot+1):
             if arr[location] > arr[positionOfMax]:
                 positionOfMax = location
-        
+
         temp = arr[fillslot]
         arr[fillslot] = arr[positionOfMax]
         arr[positionOfMax] = temp
-    
+
     return arr    
 ```
 Sorting from the left:
 
 ```
 def select_sort(arr):
-    
+
     # For every slot in array
     for fillslot in range(len(arr)):
         positionOfMin=fillslot
@@ -108,22 +109,22 @@ def select_sort(arr):
 ```
 
 def insert_sort(arr):
-    
+
     for i in range(1, len(arr)):
-        
+
         # define the position and currentValue for comparasion
         position = i
         currentValue = arr[position]
-        
+
         while position > 0 and arr[position-1] > currentValue:
             # the position is keeping changing, but the currentValue will be always as the mark for comparing
-            # whenever the value before the position is bigger than currentValue, the current position value will be 
+            # whenever the value before the position is bigger than currentValue, the current position value will be
             # set as the bigger value
             arr[position] = arr[position-1]
             position -= 1
-        
+
         arr[position] = currentValue
-    
+
     return arr
 
 ```
@@ -133,22 +134,22 @@ def insert_sort(arr):
 
 ```
 def merge_sort(arr):
-    
+
     if len(arr) > 1:
         mid = len(arr) // 2
         lefthalf = arr[:mid]
         righthalf = arr[mid:]
-        
+
         merge_sort(lefthalf)
         merge_sort(righthalf)
 
         i = j = k = 0
-        
+
         while i < len(lefthalf) and j < len(righthalf):
             if lefthalf[i] < righthalf[j]:
                 arr[k] = lefthalf[i]
                 i += 1
-            else: 
+            else:
                 arr[k] = righthalf[j]
                 j += 1
 
