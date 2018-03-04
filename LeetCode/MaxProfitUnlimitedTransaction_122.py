@@ -16,7 +16,7 @@ def unlimit_transaction(price):
         while i < len(price) - 1 and price[i] < price[i + 1]:
             i += 1
         peak = price[i]
-        
+
         # As the i keeps adding up, the valley and peak are holding the value
         # of two ends in a continuous phase, which will make more sense in the next
         # solution
@@ -28,3 +28,15 @@ def unlimit_transaction(price):
     return max_profit
 
 # https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/solution/
+
+def unlimit_transaction2(price):
+
+    max_profit = 0
+
+    while i < len(price) - 1:
+        if price[i] < price[i + 1]:
+            max_profit += price[i + 1] - price[i]
+
+        i += 1
+
+    return max_profit
