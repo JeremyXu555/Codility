@@ -32,7 +32,8 @@ def unlimit_transaction(price):
 def unlimit_transaction2(price):
 
     max_profit = 0
-
+    ## this might be the idea of high frequency trading method, once we
+    ## found there is a price grow, we trade
     while i < len(price) - 1:
         if price[i] < price[i + 1]:
             max_profit += price[i + 1] - price[i]
