@@ -65,6 +65,20 @@ def buble_sort(arr):
 ```
 `range()` contains the starting point but not the ending point
 
+May 29, 2018:
+```
+pointer = 0
+for x in range(0, len(arr)):
+
+    for y in range(pointer, len(arr)-1):
+        if arr[y] < arr[y+1]:
+            temp = arr[y]
+            arr[y] = arr[y+1]
+            arr[y+1] = temp
+    pointer += 1
+
+```
+
 ### Selection Sort:
 Sorting from the right
 ```
