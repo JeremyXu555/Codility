@@ -104,6 +104,23 @@ def select_sort(arr):
     return arr
 
 ```
+2018 May 29
+```
+pointer = 0
+
+for x in range(0, len(arr)):
+    minVal = arr[x]
+    for y in range(pointer, len(arr)):
+        if arr[y] < minVal:
+            temp = arr[y]
+            arr[y] = arr[pointer]
+            arr[pointer] = temp
+    pointer += 1
+
+```
+
+
+
 ### Insert Sort
 
 ```
